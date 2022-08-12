@@ -1,0 +1,74 @@
+:root {
+    
+    /* we use the css variable to store all the colors of the page to be able to change theme without dificulty */
+    --backgroungColor1: #000000c5;
+    --backgroundColor2: #ffffff25;
+    --navbarColor: #000000af;
+
+    --textColor1: #ffffff;
+    --textColor2: #0CF25D;
+
+    --colorThemeIcon: url(sun.png);
+    
+    color: var(--textColor1);
+}
+
+/* page style */
+* {box-sizing: border-box;margin: 0;padding: 0;}
+@font-face {font-family: dosis;src: url(font.ttf);}
+.header {display: flex;position: absolute;justify-content: space-around;align-items: center;height: 5em;width: 100vw;top: 0;background-color: var(--navbarColor);z-index: 25;}
+.header li {color: var(--textColor1);font-size: 1.5em;list-style: none;}
+body {background-image: url(fond.png);font-family: dosis;}
+section {position: relative;background-color: var(--backgroungColor1);height: 100vh;background-repeat: no-repeat;background-position: center;background-size: cover;}
+section::before {content: "";position: absolute;background-color: var(--backgroundColor2);height: 100vh;width: 50vw;z-index: 1;left: 0;clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);opacity: 0.8;}
+h1 {color: var(--textColor2);font-size: 5em;}
+p {font-size: 1.5em;}
+.content {padding: 200px 300px 0 50px;}
+
+
+/* theme & translation system */
+.buttons {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+}
+.buttons div {
+    height: 75px;
+    width: 75px;
+    margin-top: 20px;
+    background-color: var(--backgroungColor1);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+/* the switch button for the color theme */
+.colorTheme {
+    background-image: var(--colorThemeIcon);
+}
+
+/* the dropdown menu for the translation */
+.langDiv.active {
+    height: 265px;
+}
+.langDiv:not(.active) :not(.select){
+    display: none;
+}
+/*.langDiv div {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--textColor2);
+}*/
+.langDiv .fr {
+    background-image: url("icon-fr.gif");
+}
+.langDiv .uk {
+    background-image: url("icon-uk.jpg");
+}
+.langDiv .es {
+    background-image: url("icon-es.gif");
+}
